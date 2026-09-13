@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-elvara-black text-elvara-ivory antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c9a84c40;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c9a84c80;
+  }
+
+  /* Selection */
+  ::selection {
+    background: #c9a84c30;
+    color: #f0ebe0;
+  }
+}
+
+@layer components {
+  .elvara-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .elvara-section {
+    @apply py-20 md:py-28;
+  }
+
+  .elvara-heading {
+    @apply font-serif text-elvara-ivory;
+  }
+
+  .elvara-subheading {
+    @apply font-sans text-elvara-gold text-xs tracking-[0.35em] uppercase;
+  }
+
+  .elvara-input {
+    @apply w-full bg-elvara-black border border-elvara-gold/25 px-4 py-3 text-elvara-ivory
+           font-sans text-sm focus:outline-none focus:border-elvara-gold transition-colors
+           placeholder:text-elvara-ivory/25;
+  }
+
+  .elvara-btn-primary {
+    @apply font-sans text-xs tracking-[0.25em] uppercase bg-elvara-ivory text-elvara-black
+           px-8 py-3.5 hover:bg-elvara-gold hover:text-white transition-all duration-300;
+  }
+
+  .elvara-btn-secondary {
+    @apply font-sans text-xs tracking-[0.25em] uppercase border border-elvara-ivory/60
+           text-elvara-ivory px-8 py-3.5 hover:border-elvara-gold hover:text-elvara-gold
+           transition-all duration-300;
+  }
+
+  .elvara-btn-gold {
+    @apply font-sans text-xs tracking-[0.25em] uppercase bg-elvara-gold text-elvara-black
+           px-8 py-3.5 hover:bg-elvara-gold-light transition-all duration-300;
+  }
+
+  .gold-line {
+    @apply block w-12 h-px bg-elvara-gold mx-auto;
+  }
+
+  .product-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-elvara-black\/97 {
+    background-color: rgba(8, 8, 8, 0.97);
+  }
+}
